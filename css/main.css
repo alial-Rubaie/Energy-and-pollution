@@ -1,0 +1,557 @@
+/* Normlize CSS */
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  height: 100vh;
+}
+body::before {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(19 19 37);
+  position: absolute;
+  z-index: 100;
+  color: white;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+}
+
+/* I'm sorry but this project will not work on mobile devices or small screens */
+
+@media (max-width: 860px) {
+  body::before {
+    content: "Very Sorry This Page Works Fine On Medium Size Screens At Least Sorry Again";
+  }
+}
+body {
+  display: flex;
+  background-color: black;
+  -moz-transform: scale(0.8, 0.8);
+  zoom: 0.8;
+  zoom: 60%;
+  min-height: 100%;
+}
+.stars,
+.twinkling,
+.clouds {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.stars {
+  z-index: -10;
+  background: #000 url("https://image.ibb.co/mjnygo/stars.png") repeat top
+    center;
+  animation: move-twink-back 300s infinite;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+/* Description section design */
+
+.explain {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 250px;
+  text-align: center;
+  padding: 10px;
+  line-height: 1.5;
+  font-size: 25px;
+}
+#pointer {
+  display: none;
+  width: 0;
+  border-right: 1px solid white;
+  animation: pointerMove 500ms steps(44) infinite;
+  padding-left: 5px;
+}
+@media (max-width: 1250px) {
+  .explain {
+    column-gap: 50px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .explain div {
+    height: fit-content;
+  }
+}
+.explain span {
+  display: block;
+  padding-bottom: 10px;
+  font-size: 30px;
+}
+.explain div {
+  padding-left: 20px;
+  padding-bottom: 15px;
+}
+
+/* The windmill draw */
+
+.Windmill {
+  width: 450px;
+  height: 550px;
+  position: relative;
+  display: flex;
+  align-self: flex-end;
+  justify-content: center;
+}
+
+.Windmill:active .fan {
+  animation-play-state: running;
+}
+
+.container .Windmill:active .light {
+  background-color: #ac2525;
+}
+
+.stand {
+  align-self: flex-end;
+  width: 15px;
+  height: 70%;
+  background: linear-gradient(to bottom, #a1a1a1 25%, #fff);
+  position: absolute;
+}
+
+.stand::before {
+  content: "";
+  position: absolute;
+  width: 85px;
+  height: 10px;
+  background-color: silver;
+  bottom: 0;
+  left: 100%;
+  box-shadow: inset 1px -2px 5px 0px black, inset 0 5px 20px gray;
+}
+
+.fan {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  margin-top: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  animation: rutate 2s infinite linear;
+  animation-play-state: paused;
+}
+
+.fan span {
+  border-top-left-radius: 50%;
+  display: block;
+  width: 7px;
+  height: 200px;
+  position: absolute;
+  background: linear-gradient(to bottom, #838383 25%, #fff);
+}
+
+.fan span:nth-child(1) {
+  top: -100px;
+  left: 97px;
+}
+
+.fan span:nth-child(2) {
+  top: 50px;
+  left: 185px;
+  transform: rotate(120deg);
+}
+
+.fan span:nth-child(3) {
+  top: 50px;
+  left: 8px;
+  transform: rotate(240deg);
+}
+
+.square {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  background: linear-gradient(to top, #838383 25%, #fff);
+  transform: translateY(155px);
+  position: absolute;
+  z-index: -10;
+}
+
+/* earth draw */
+
+.earth {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: url("https://i.postimg.cc/d0bNh1pn/stylized-earth-01.jpg");
+  background-size: 545px;
+  background-position: center;
+  background-color: #0c55ad;
+  box-shadow: inset -20px 20px 40px rgba(235, 225, 52, 0.3),
+    inset 20px -20px 40px rgba(2, 16, 31, 0.5),
+    inset 10px -10px 10px rgba(2, 16, 31, 0.5);
+  transform: rotate(15deg);
+  animation: earth-rutate 10s linear infinite;
+  align-self: flex-end;
+  margin-right: 30%;
+}
+@media (max-width: 1280px) {
+  .earth {
+    margin-right: 30%;
+  }
+}
+@media (max-width: 975px) {
+  .earth {
+    margin-right: 25%;
+  }
+}
+
+/* The two boxes (station)*/
+
+.container .station {
+  position: relative;
+  align-self: flex-end;
+  width: 200px;
+  height: 250px;
+  background: silver;
+  margin-right: 20px;
+}
+
+.container .station .light {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: -20px;
+  right: 0;
+  background: rgba(255, 0, 0, 0.158) 50%;
+  border-radius: 50%;
+  z-index: -10;
+  transition: 0.2s;
+}
+
+.station i {
+  color: silver;
+  font-size: 100px;
+  position: absolute;
+  top: 16%;
+  left: 82%;
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.container .station::before,
+.container .station::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 11.5px;
+  background-color: transparent;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  border: 9px solid gray;
+  border-left: transparent;
+  border-right: transparent;
+  border-bottom: transparent;
+  border-top-left-radius: 30%;
+  border-top-right-radius: 30%;
+}
+
+.container .station::after {
+  left: 50%;
+  top: 26%;
+}
+
+.Windmill .station {
+  width: 150px;
+  height: 200px;
+  position: absolute;
+  background: silver;
+  right: -15px;
+  bottom: 0;
+  margin-right: 0;
+}
+
+.Windmill .station::before,
+.Windmill .station::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 7px;
+  background-color: transparent;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  border: 6px solid gray;
+  border-left: transparent;
+  border-right: transparent;
+  border-bottom: transparent;
+  border-top-left-radius: 30%;
+  border-top-right-radius: 30%;
+}
+
+.Windmill .station::after {
+  left: 50%;
+  top: 26%;
+}
+
+/* Style the wires */
+
+.wire {
+  width: auto;
+  flex-grow: 1;
+  height: 10px;
+  background-color: silver;
+  box-shadow: inset 1px -2px 5px 0px black, inset 0 5px 20px gray;
+  align-self: flex-end;
+  z-index: -10;
+}
+
+.towerWire {
+  width: 50%;
+  z-index: -1;
+  right: 0;
+  position: absolute;
+  height: 15px;
+  align-self: flex-end;
+  box-shadow: inset 1px -2px 5px 0px black, inset 0 5px 20px #3b3939;
+}
+
+/* oil tower */
+
+.container .imgContainer {
+  width: fit-content;
+  height: 450px;
+  position: absolute;
+  align-self: flex-end;
+  right: 0;
+  display: flex;
+  align-items: flex-end;
+  margin-right: 10px;
+}
+.container .imgContainer img {
+  height: calc(100% - 98px);
+}
+
+/* The flame */
+
+.red {
+  width: 80px;
+  height: 80px;
+  background: orangered;
+}
+.orange {
+  width: 60px;
+  height: 60px;
+  background: orange;
+}
+.gold {
+  width: 45px;
+  height: 45px;
+  background: gold;
+}
+.white {
+  width: 35px;
+  height: 35px;
+  background: lightyellow;
+}
+.flame-wrapper {
+  position: relative;
+}
+.flame {
+  bottom: 0;
+  position: absolute;
+}
+.flame {
+  bottom: 0;
+  position: absolute;
+  border-radius: 50% 0% 50% 50%;
+}
+.orange {
+  left: 10px;
+}
+.gold {
+  left: 18px;
+}
+.white {
+  left: 22px;
+}
+.flame {
+  transform: rotate(-45deg);
+}
+.red {
+  box-shadow: 0px 0px 10px 5px orangered;
+}
+.orange {
+  box-shadow: 0px 0px 12px 6px orange;
+}
+.gold {
+  box-shadow: 0px 0px 9px 4px gold;
+}
+.white {
+  box-shadow: 0px 0px 9px 4px lightyellow;
+}
+.blue {
+  box-shadow: 0px 0px 15px 10px darkblue;
+}
+.black {
+  box-shadow: 0px 0px 15px 10px black;
+}
+.base {
+  border-radius: 50%;
+  position: absolute;
+}
+.flame-wrapper {
+  width: 50px;
+  position: absolute;
+  left: 36%;
+  top: 19%;
+  display: none;
+  align-self: center;
+}
+.container .imgContainer:active .flame-wrapper {
+  display: block;
+  animation: flicker 3s infinite linear, opacity 2s infinite forwards;
+}
+
+@media (max-width: 1500px) {
+  .towerCable {
+    width: 55%;
+  }
+}
+@media (max-width: 1260px) {
+  .towerCable {
+    width: 60%;
+  }
+}
+@media (max-width: 980px) {
+  .towerCable {
+    width: 60%;
+  }
+}
+
+/* By me 😊 */
+
+.made {
+  color: white;
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  font-size: 20px;
+  font-family: Cursive, sans-serif;
+  padding-right: 10px;
+}
+.made i {
+  color: red;
+}
+
+/* Animations */
+
+@keyframes goodEf {
+  0% {
+    box-shadow: inset -20px 20px 40px rgb(235 225 52 / 30%),
+      inset 20px -20px 40px rgb(2 16 31 / 50%);
+  }
+  100% {
+    box-shadow: inset -111px 20px 40px rgb(52 179 235 / 30%),
+      inset 108px -20px 40px rgb(0 123 255 / 9%);
+  }
+}
+@keyframes badEf {
+  0% {
+    box-shadow: inset -20px 20px 40px rgb(235 225 52 / 30%),
+      inset 20px -20px 40px rgb(2 16 31 / 50%);
+  }
+  100% {
+    box-shadow: inset -150px 20px 40px rgb(0 0 0 / 70%),
+      inset 120px -20px 40px rgb(2 16 31 / 70%);
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flicker {
+  0% {
+    transform: rotate(-1deg);
+  }
+  20% {
+    transform: rotate(2deg) scaleY(1.05);
+  }
+  40% {
+    transform: rotate(-1deg);
+  }
+  60% {
+    transform: rotate(1deg);
+  }
+  80% {
+    transform: rotate(-1deg) scaleY(0.9);
+  }
+  100% {
+    transform: rotate(1deg);
+  }
+}
+@keyframes force {
+  to {
+    transform: rotate(25deg);
+  }
+}
+@keyframes move-twink-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+
+@keyframes rutate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes earth-rutate {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 545px 0;
+  }
+}
+@keyframes pointerMove {
+  from {
+    border-right-color: #fff;
+  }
+  to {
+    border-right-color: transparent;
+  }
+}

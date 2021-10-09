@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy and pollution</title>
+    <!-- main style -->
+    <link rel="stylesheet" href="./css/main.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+        integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous" />
+</head>
+<!-- I disable the drag and drop feature because it causes some trouble -->
+
+<body ondragstart="return false;" ondrop="return false;">
+    <!-- The background -->
+    <div class="stars"></div>
+
+    <!-- container contain all the elements -->
+    <div class="container">
+        <!-- Some divs to explain the idea  -->
+        <div class="explain">
+            <div class="Guide">
+                <span>Guide</span>
+                <p>Tap left click and hold a power source to generate electricity, And look what happens to the earth.
+                </p>
+            </div>
+            <div class="description">
+                <span>Describe The Action</span>
+                <p style="display:inline;" id="describe">Please run at least one station to get a
+                    description of
+                    the action you
+                    did.</p><span id="pointer"></span>
+            </div>
+            <div class="Project">
+                <span>About This Project</span>
+                <p>We all know that electrical energy is of great importance for scientific advancement and life in
+                    general. And man has sought to obtain it since it was discovered. But something happened that is
+                    environmental pollution. The old methods of producing energy caused great and dangerous pollution on
+                    our earth. And from that point, people started thinking about alternative (clean) energy. My project
+                    Discusses the danger of pollution caused by the production of energy.</p>
+            </div>
+        </div>
+
+        <!-- Now time for drawing -->
+
+        <div class="Windmill" id="mill">
+            <div class="stand"></div>
+            <div class="engine"></div>
+            <div class="fan" id="fan">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="square"></div>
+            <div class="station" id="windmill-station">
+                <div class="light"></div>
+            </div>
+        </div>
+        <div class="wire"></div>
+        <div class="station earthStation"><i class="fas fa-plug"></i>
+            <div class="light" id="earthLight"></div>
+        </div>
+        <div class="earth" id="earth"></div>
+        <div class="imgContainer" id="tower">
+            <div class="flame-wrapper" id="fire">
+                <div class="flame red"></div>
+                <div class="flame orange"></div>
+                <div class="flame gold"></div>
+                <div class="flame white"></div>
+            </div>
+            <img src="./images/oil-rig.png">
+        </div>
+        <div class="wire towerWire"></div>
+        <!-- I hope you like it ❤ -->
+        <p class="made">Made with <i class="fas fa-heart"></i> by Ali Al-Rubaie</p>
+    </div>
+
+</body>
+<script src="./js/main.js"></script>
+
+</html>
