@@ -36,9 +36,9 @@ body::before {
 body {
   display: flex;
   background-color: black;
-  -moz-transform: scale(0.8, 0.8);
-  zoom: 0.8;
   zoom: 60%;
+  -ms-zoom: 60%;
+  -webkit-zoom: 60%;
   min-height: 100%;
 }
 .stars,
